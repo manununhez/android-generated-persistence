@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="py.com.cuatroqstudios.persistenceapp">
+
+    <!-- External storage for caching. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:exported="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.FilesHelperActivity" />
+        <activity android:name=".activities.DatabaseHelperActivity" />
+        <activity android:name=".activities.KeyValueHelperActivity" />
+
+        <!--&lt;!&ndash; PROVIDER &ndash;&gt;-->
+        <!--<provider-->
+        <!--android:name=".db.contentprovider.MyContentProvider"-->
+        <!--android:authorities="py.com.cuatroqstudios.persistenceapp.contentprovider" />-->
+        <!---->
+    </application>
+
+</manifest>
