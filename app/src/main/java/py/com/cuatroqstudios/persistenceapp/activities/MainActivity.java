@@ -29,32 +29,50 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Button btnDb = (Button) findViewById(R.id.btnDb);
-        Button btnFiles = (Button) findViewById(R.id.btnFiles);
-        Button btnKeyValue = (Button) findViewById(R.id.btnKeyValue);
 
-        btnDb.setOnClickListener(new View.OnClickListener() {
+        Button btnUser = (Button) findViewById(R.id.btnUser);
+        Button btnShoppingCart = (Button) findViewById(R.id.btnShoppingCart);
+        Button btnProduct = (Button) findViewById(R.id.btnProduct);
+        Button btnProvider = (Button) findViewById(R.id.btnProvider);
+        Button btnImageProduct = (Button) findViewById(R.id.btnImageProduct);
+
+
+        btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, DatabaseHelperActivity.class));
+                startActivity(new Intent(MainActivity.this, UserActivity.class));
             }
         });
 
-        btnFiles.setOnClickListener(new View.OnClickListener() {
+        btnShoppingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, FilesHelperActivity.class));
-
+                startActivity(new Intent(MainActivity.this, ShoppingCartActivity.class));
             }
         });
 
-        btnKeyValue.setOnClickListener(new View.OnClickListener() {
+        btnProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, KeyValueHelperActivity.class));
-
+                startActivity(new Intent(MainActivity.this, ProductActivity.class));
             }
         });
+
+        btnProvider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ProviderActivity.class));
+            }
+        });
+
+        btnImageProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ImageProductActivity.class));
+            }
+        });
+
+
     }
 
 

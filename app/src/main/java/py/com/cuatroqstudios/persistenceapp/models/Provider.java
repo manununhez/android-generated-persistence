@@ -1,9 +1,11 @@
 package py.com.cuatroqstudios.persistenceapp.models;
 
+import java.io.Serializable;
+
 /**
  * Created by manuel on 7/8/16.
  */
-public class Provider {
+public class Provider implements Serializable {
     private Integer idProveedor;
     private String descripcion_local;
     private String proveedor;

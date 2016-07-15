@@ -11,23 +11,33 @@
     tools:context=".activities.MainActivity">
 
 
-
     <Button
-        android:id="@+id/btnDb"
+        android:id="@+id/btnUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DB"/>
+        android:text="User"/>
 
     <Button
-        android:id="@+id/btnFiles"
+        android:id="@+id/btnShoppingCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Files"/>
+        android:text="ShoppingCart"/>
+
     <Button
-        android:id="@+id/btnKeyValue"
+        android:id="@+id/btnProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Key/Value"/>
+        android:text="Product"/>
 
+    <Button
+        android:id="@+id/btnProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Provider"/>
 
+    <Button
+        android:id="@+id/btnImageProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ImageProduct"/>
 </LinearLayout>
