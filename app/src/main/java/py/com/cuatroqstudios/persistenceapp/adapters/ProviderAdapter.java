@@ -58,7 +58,7 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Provider provider = providerList.get(position);
         holder.tvIdProveedor.setText(String.valueOf(provider.getIdProveedor()));
         holder.tvDescripcion.setText(provider.getDescripcion_local());
@@ -69,7 +69,7 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.MyView
             @Override
             public void onClick(View view) {
                 providerDAO.deleteProvider(provider);
-                providerList.remove(position);
+                providerList.remove(holder.getAdapterPosition());
                 notifyDataSetChanged();
                 ((ProviderActivity) context).getProvidersCount();
             }

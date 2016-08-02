@@ -31,7 +31,9 @@
         <activity android:name=".activities.ProviderActivity" />
         <activity android:name=".activities.ProductActivity" />
         <activity android:name=".activities.ImageProductActivity" />
-        <activity android:name=".activities.ProviderFormActivity"></activity>
+        <activity android:name=".activities.ProviderFormActivity"/>
+        <activity android:name=".activities.ProductFormActivity"/>
+        <activity android:name=".activities.UserFormActivity"/>
     </application>
 
 </manifest>

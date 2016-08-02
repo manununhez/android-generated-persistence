@@ -1,17 +1,22 @@
 package py.com.cuatroqstudios.persistenceapp.models;
 
+import java.io.Serializable;
+
 /**
  * Created by manuel on 7/8/16.
  */
-public class Product {
-    private String idProducto;
+public class Product implements Serializable{
+    private Integer idProducto;
     private String nombre;
     private String precio;
     private String codigo;
-    private String idProveedor;
+    private Integer idProveedor;
 
-    public Product(String idProducto, String nombre,
-                   String precio, String codigo, String idProveedor) {
+    public Product() {
+    }
+
+    public Product(Integer idProducto, String nombre,
+                   String precio, String codigo, Integer idProveedor) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.precio = precio;
@@ -20,11 +25,11 @@ public class Product {
     }
 
 
-    public String getIdProducto() {
+    public Integer getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(String idProducto) {
+    public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -52,11 +57,11 @@ public class Product {
         this.codigo = codigo;
     }
 
-    public String getIdProveedor() {
+    public Integer getIdProveedor() {
         return idProveedor;
     }
 
-    public void setIdProveedor(String idProveedor) {
+    public void setIdProveedor(Integer idProveedor) {
         this.idProveedor = idProveedor;
     }
 

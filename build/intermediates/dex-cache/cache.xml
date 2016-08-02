@@ -1,2 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_73432cc2bda271dda3d1824991ae33fc5c71e9f8.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="866c1be05b3d0a6c5a47eed8df06243fe2ac68b9">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_4f2f0073cc1a08958e00dd6c872df2030203077b.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_b73cdc49743754c67f2c3bf0fc276fcfbab213f9.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_ecf6d9d40a4889a4cc2d5a60f6f129c714df1205.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.0.0_60d4690124f7c47c670085de26888ffb91f4be92.jar" />
+    </item>
+    <item
+        jar="/home/manuel/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_e87f168c03a4da483ff213c2b0dbde0010f470e1.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_cbacca6bb89b3a9d68b29ea1c5317519a3caffa9.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_c4d404c170df513bf90cac87716498ef125ed96f.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="dfa31f233a3fb87aa2bb15e951e14f509dcc218e">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/instant-run_329a09aeb9705e3ed28006bb714f67cd32953bd8.jar" />
+    </item>
+    <item
+        jar="/usr/local/4qstudios/androidpersistence/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/usr/local/4qstudios/androidpersistence/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_4badb22a5f88791cf9233a4f1d78c95529920cc4.jar" />
+    </item>
+
+</items>

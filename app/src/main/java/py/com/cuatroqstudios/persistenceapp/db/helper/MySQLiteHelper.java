@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import py.com.cuatroqstudios.persistenceapp.db.tables.ImageProductTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ProductTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ProviderTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ShoppingCartTable;
@@ -28,7 +27,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         ProductTable.onCreate(sqLiteDatabase);
         ShoppingCartTable.onCreate(sqLiteDatabase);
         ProviderTable.onCreate(sqLiteDatabase);
-        ImageProductTable.onCreate(sqLiteDatabase);
     }
 
     @Override
@@ -37,7 +35,5 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         ProductTable.onUpgrade(sqLiteDatabase, oldVersion, newVersion);
         ShoppingCartTable.onUpgrade(sqLiteDatabase, oldVersion, newVersion);
         ProviderTable.onUpgrade(sqLiteDatabase, oldVersion, newVersion);
-        ImageProductTable.onUpgrade(sqLiteDatabase, oldVersion, newVersion);
-
     }
 }

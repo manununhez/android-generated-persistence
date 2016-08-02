@@ -1,9 +1,11 @@
 package py.com.cuatroqstudios.persistenceapp.models;
 
+import java.io.Serializable;
+
 /**
  * Created by manuel on 7/14/16.
  */
-public class User {
+public class User implements Serializable{
     private String nombre;
     private String password;
 

@@ -17,7 +17,6 @@ import java.util.HashSet;
 
 import py.com.cuatroqstudios.persistenceapp.BuildConfig;
 import py.com.cuatroqstudios.persistenceapp.db.helper.MySQLiteHelper;
-import py.com.cuatroqstudios.persistenceapp.db.tables.ImageProductTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ProductTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ProviderTable;
 import py.com.cuatroqstudios.persistenceapp.db.tables.ShoppingCartTable;
@@ -42,12 +41,12 @@ public class MyContentProvider extends ContentProvider {
     private static final String BASE_PATH_PRODUCT = ProductTable.TABLET_NAME;
     private static final String BASE_PATH_PROVEEDOR = ProviderTable.TABLET_NAME;
     private static final String BASE_PATH_CARRITO = ShoppingCartTable.TABLET_NAME;
-    private static final String BASE_PATH_IMAGEN = ImageProductTable.TABLET_NAME;
+//    private static final String BASE_PATH_IMAGEN = ImageProductTable.TABLET_NAME;
 
     public static final Uri CONTENT_URI_PRODUCTO = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH_PRODUCT);
     public static final Uri CONTENT_URI_PROVEEDOR = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH_PROVEEDOR);
     public static final Uri CONTENT_URI_CARRITO = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH_CARRITO);
-    public static final Uri CONTENT_URI_IMAGEN = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH_IMAGEN);
+//    public static final Uri CONTENT_URI_IMAGEN = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH_IMAGEN);
 
     private static final UriMatcher URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
 
@@ -61,8 +60,8 @@ public class MyContentProvider extends ContentProvider {
         URI_MATCHER.addURI(AUTHORITY, BASE_PATH_PROVEEDOR + "/#", PROVEEDOR_ID);
         URI_MATCHER.addURI(AUTHORITY, BASE_PATH_CARRITO, CARRITO);
         URI_MATCHER.addURI(AUTHORITY, BASE_PATH_CARRITO + "/#", CARRITO_ID);
-        URI_MATCHER.addURI(AUTHORITY, BASE_PATH_IMAGEN, IMAGEN);
-        URI_MATCHER.addURI(AUTHORITY, BASE_PATH_IMAGEN + "/#", IMAGEN_ID);
+//        URI_MATCHER.addURI(AUTHORITY, BASE_PATH_IMAGEN, IMAGEN);
+//        URI_MATCHER.addURI(AUTHORITY, BASE_PATH_IMAGEN + "/#", IMAGEN_ID);
     }
 
 
@@ -125,16 +124,16 @@ public class MyContentProvider extends ContentProvider {
                 sqLiteQueryBuilder.appendWhere("_id =" + uri.getLastPathSegment());
                 break;
 
-            case IMAGEN:
-                sqLiteQueryBuilder.setTables(BASE_PATH_IMAGEN);
-                Tools.Logger.i("uriType is IMAGEN");
-                break;
-
-            case IMAGEN_ID:
-                sqLiteQueryBuilder.setTables(BASE_PATH_IMAGEN);
-//                adding the ID to the original query
-                sqLiteQueryBuilder.appendWhere("_id =" + uri.getLastPathSegment());
-                break;
+//            case IMAGEN:
+//                sqLiteQueryBuilder.setTables(BASE_PATH_IMAGEN);
+//                Tools.Logger.i("uriType is IMAGEN");
+//                break;
+//
+//            case IMAGEN_ID:
+//                sqLiteQueryBuilder.setTables(BASE_PATH_IMAGEN);
+////                adding the ID to the original query
+//                sqLiteQueryBuilder.appendWhere("_id =" + uri.getLastPathSegment());
+//                break;
             default:
                 throw new IllegalArgumentException("Unknow URI:" + uri);
         }
@@ -179,10 +178,10 @@ public class MyContentProvider extends ContentProvider {
                 result = Uri.parse(BASE_PATH_CARRITO + "/" + id);
                 break;
 
-            case IMAGEN:
-                id = db.insert(BASE_PATH_IMAGEN, null, values);
-                result = Uri.parse(BASE_PATH_IMAGEN + "/" + id);
-                break;
+//            case IMAGEN:
+//                id = db.insert(BASE_PATH_IMAGEN, null, values);
+//                result = Uri.parse(BASE_PATH_IMAGEN + "/" + id);
+//                break;
             default:
                 throw new IllegalArgumentException("Unknow URI:" + uri);
 
@@ -248,20 +247,20 @@ public class MyContentProvider extends ContentProvider {
                 }
                 break;
 
-            case IMAGEN:
-                rowsDeleted = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
-                break;
-
-            case IMAGEN_ID:
-                id = uri.getLastPathSegment();
-                rowsDeleted = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
-
-                if (TextUtils.isEmpty(selection)) {
-                    rowsDeleted = db.delete(BASE_PATH_IMAGEN, "_id = " + id, null);
-                } else {
-                    rowsDeleted = db.delete(BASE_PATH_IMAGEN, "_id = " + id + " and " + selection, selectionArgs);
-                }
-                break;
+//            case IMAGEN:
+//                rowsDeleted = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
+//                break;
+//
+//            case IMAGEN_ID:
+//                id = uri.getLastPathSegment();
+//                rowsDeleted = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
+//
+//                if (TextUtils.isEmpty(selection)) {
+//                    rowsDeleted = db.delete(BASE_PATH_IMAGEN, "_id = " + id, null);
+//                } else {
+//                    rowsDeleted = db.delete(BASE_PATH_IMAGEN, "_id = " + id + " and " + selection, selectionArgs);
+//                }
+//                break;
             default:
                 throw new IllegalArgumentException("Unknow URI:" + uri);
 
@@ -330,19 +329,19 @@ public class MyContentProvider extends ContentProvider {
                 }
                 break;
 
-            case IMAGEN:
-                rowsUpdated = db.update(BASE_PATH_IMAGEN, values, selection, selectionArgs);
-                break;
-            case IMAGEN_ID:
-                id = uri.getLastPathSegment();
-                rowsUpdated = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
-
-                if (TextUtils.isEmpty(selection)) {
-                    rowsUpdated = db.update(BASE_PATH_IMAGEN, values, "_id = " + id, null);
-                } else {
-                    rowsUpdated = db.update(BASE_PATH_IMAGEN, values, "_id = " + id + " and " + selection, selectionArgs);
-                }
-                break;
+//            case IMAGEN:
+//                rowsUpdated = db.update(BASE_PATH_IMAGEN, values, selection, selectionArgs);
+//                break;
+//            case IMAGEN_ID:
+//                id = uri.getLastPathSegment();
+//                rowsUpdated = db.delete(BASE_PATH_IMAGEN, selection, selectionArgs);
+//
+//                if (TextUtils.isEmpty(selection)) {
+//                    rowsUpdated = db.update(BASE_PATH_IMAGEN, values, "_id = " + id, null);
+//                } else {
+//                    rowsUpdated = db.update(BASE_PATH_IMAGEN, values, "_id = " + id + " and " + selection, selectionArgs);
+//                }
+//                break;
             default:
                 throw new IllegalArgumentException("Unknow URI:" + uri);
 
@@ -385,12 +384,12 @@ public class MyContentProvider extends ContentProvider {
                 available.add(ShoppingCartTable.COLUMN_PROVEEDOR_ID);
                 break;
 
-            case IMAGEN:
-                available.add(ImageProductTable.COLUMN_IMAGES_ID);
-                available.add(ImageProductTable.COLUMN_IMAGEN);
-                available.add(ImageProductTable.COLUMN_PRODUCTO_ID);
-                available.add(ImageProductTable.COLUMN_IMAGEN_SRC);
-                break;
+//            case IMAGEN:
+//                available.add(ImageProductTable.COLUMN_IMAGES_ID);
+//                available.add(ImageProductTable.COLUMN_IMAGEN);
+//                available.add(ImageProductTable.COLUMN_PRODUCTO_ID);
+//                available.add(ImageProductTable.COLUMN_IMAGEN_SRC);
+//                break;
             default:
                 throw new IllegalArgumentException("Unknow URI:" + uriType);
         }

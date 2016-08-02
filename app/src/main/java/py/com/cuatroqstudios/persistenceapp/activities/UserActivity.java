@@ -1,5 +1,6 @@
 package py.com.cuatroqstudios.persistenceapp.activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,12 +16,15 @@ import java.util.List;
 import py.com.cuatroqstudios.persistenceapp.R;
 import py.com.cuatroqstudios.persistenceapp.adapters.UserAdapter;
 import py.com.cuatroqstudios.persistenceapp.models.User;
+import py.com.cuatroqstudios.persistenceapp.sharedmanager.helper.MySharedPreferencesHelper;
 import py.com.cuatroqstudios.persistenceapp.utils.DividerItemDecoration;
+import py.com.cuatroqstudios.persistenceapp.utils.Tools;
 
 public class UserActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private UserAdapter mAdapter;
     private List<User> userList = new ArrayList<>();
+    private int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class UserActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new UserAdapter(userList);
+        mAdapter = new UserAdapter(this, userList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -49,10 +53,9 @@ public class UserActivity extends AppCompatActivity {
     private void loadUserData(){
         Toast.makeText(UserActivity.this, "Retrieving data from sharedPreferences", Toast.LENGTH_SHORT).show();
 
-        User user = new User("Manuel","123456");
-        userList.add(user);
-
-        user = new User("Pepe", "654789");
+        String nombre = MySharedPreferencesHelper.getValue(this, "nombre");
+        String password = MySharedPreferencesHelper.getValue(this, "password");
+        User user = new User(nombre == null ? "" : nombre, password == null ? "" : password);
         userList.add(user);
 
         mAdapter.notifyDataSetChanged();
@@ -68,6 +71,21 @@ public class UserActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                // The user picked a contact.
+                // The Intent's data Uri identifies which contact was selected.
+                Tools.Logger.d("OnActivityResult");
+                userList.clear();
+                loadUserData();
+                // Do something with the contact here (bigger example below)
+            }
+        }
     }
 
 
