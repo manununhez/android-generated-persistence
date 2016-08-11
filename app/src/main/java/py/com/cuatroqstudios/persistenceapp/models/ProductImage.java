@@ -9,6 +9,9 @@ public class ProductImage {
     private String idProducto;
     private String img_src;
 
+    public ProductImage() {
+    }
+
     public ProductImage(String idProductoImagen, String imagen, String idProducto, String img_src) {
         this.idProductoImagen = idProductoImagen;
         this.imagen = imagen;

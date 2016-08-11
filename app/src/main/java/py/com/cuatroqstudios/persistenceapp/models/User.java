@@ -9,6 +9,9 @@ public class User implements Serializable{
     private String nombre;
     private String password;
 
+    public User() {
+    }
+
     public User(String nombre, String password) {
         this.nombre = nombre;
         this.password = password;
