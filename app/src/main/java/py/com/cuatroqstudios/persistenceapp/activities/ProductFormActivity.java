@@ -12,10 +12,8 @@ import android.widget.Button;
 
 import py.com.cuatroqstudios.persistenceapp.R;
 import py.com.cuatroqstudios.persistenceapp.db.dao.ProductDAO;
-import py.com.cuatroqstudios.persistenceapp.db.dao.ProviderDAO;
 import py.com.cuatroqstudios.persistenceapp.db.helper.MySQLiteHelper;
 import py.com.cuatroqstudios.persistenceapp.models.Product;
-import py.com.cuatroqstudios.persistenceapp.models.Provider;
 
 public class ProductFormActivity extends AppCompatActivity {
     private Boolean booleanEditMode = false;
@@ -52,11 +50,11 @@ public class ProductFormActivity extends AppCompatActivity {
         if (booleanEditMode) {
             btnSave.setText("Save Changes");
             Product product = (Product) intent.getSerializableExtra("product");
-            tieIdProveedor.setText(String.valueOf(product.getIdProveedor()));
-            tieIdProducto.setText(String.valueOf(product.getIdProducto()));
-            tieNombre.setText(product.getNombre());
-            tiePrecio.setText(product.getPrecio());
-            tieCodigo.setText(product.getCodigo());
+            tieIdProveedor.setText(String.valueOf(product.getIdProvider()));
+            tieIdProducto.setText(String.valueOf(product.getIdProduct()));
+            tieNombre.setText(product.getName());
+            tiePrecio.setText(product.getPrice());
+            tieCodigo.setText(product.getCode());
         }
 
         MySQLiteHelper db = new MySQLiteHelper(this);

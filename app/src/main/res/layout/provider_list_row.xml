@@ -39,7 +39,7 @@
             android:id="@+id/idproveedor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="idProveedor:"
+            android:text="idProvider:"
             android:textSize="16sp"
             android:textStyle="bold" />
 

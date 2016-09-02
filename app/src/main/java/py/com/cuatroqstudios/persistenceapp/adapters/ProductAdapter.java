@@ -14,12 +14,8 @@ import java.util.List;
 import py.com.cuatroqstudios.persistenceapp.R;
 import py.com.cuatroqstudios.persistenceapp.activities.ProductActivity;
 import py.com.cuatroqstudios.persistenceapp.activities.ProductFormActivity;
-import py.com.cuatroqstudios.persistenceapp.activities.ProviderActivity;
-import py.com.cuatroqstudios.persistenceapp.activities.ProviderFormActivity;
 import py.com.cuatroqstudios.persistenceapp.db.dao.ProductDAO;
-import py.com.cuatroqstudios.persistenceapp.db.dao.ProviderDAO;
 import py.com.cuatroqstudios.persistenceapp.models.Product;
-import py.com.cuatroqstudios.persistenceapp.models.Provider;
 
 /**
  * Created by manuel on 7/14/16.
@@ -65,11 +61,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Product product = productList.get(position);
-        holder.tvIdProveedor.setText(String.valueOf(product.getIdProveedor()));
-        holder.tvIdProduct.setText(String.valueOf(product.getIdProducto()));
-        holder.tvNombre.setText(product.getNombre());
-        holder.tvCodigo.setText(product.getCodigo());
-        holder.tvPrecio.setText(product.getPrecio());
+        holder.tvIdProveedor.setText(String.valueOf(product.getIdProvider()));
+        holder.tvIdProduct.setText(String.valueOf(product.getIdProduct()));
+        holder.tvNombre.setText(product.getName());
+        holder.tvCodigo.setText(product.getCode());
+        holder.tvPrecio.setText(product.getPrice());
 
         holder.ivDelete.setOnClickListener(new View.OnClickListener() {
             @Override

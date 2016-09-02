@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,7 +16,6 @@ import py.com.cuatroqstudios.persistenceapp.activities.ProviderActivity;
 import py.com.cuatroqstudios.persistenceapp.activities.ProviderFormActivity;
 import py.com.cuatroqstudios.persistenceapp.db.dao.ProviderDAO;
 import py.com.cuatroqstudios.persistenceapp.models.Provider;
-import py.com.cuatroqstudios.persistenceapp.models.User;
 
 /**
  * Created by manuel on 7/14/16.
@@ -60,8 +58,8 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.MyView
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Provider provider = providerList.get(position);
-        holder.tvIdProveedor.setText(String.valueOf(provider.getIdProveedor()));
-        holder.tvDescripcion.setText(provider.getDescripcion_local());
+        holder.tvIdProveedor.setText(String.valueOf(provider.getIdProvider()));
+        holder.tvDescripcion.setText(provider.getDescription());
         holder.tvProveedor.setText(provider.getProveedor());
         holder.tvRuc.setText(provider.getRuc());
 

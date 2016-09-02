@@ -48,8 +48,8 @@ public class ProviderFormActivity extends AppCompatActivity {
         if (booleanEditMode) {
             btnSave.setText("Save Changes");
             Provider provider = (Provider) intent.getSerializableExtra("provider");
-            tieIdProveedor.setText(String.valueOf(provider.getIdProveedor()));
-            tieDescripcion.setText(provider.getDescripcion_local());
+            tieIdProveedor.setText(String.valueOf(provider.getIdProvider()));
+            tieDescripcion.setText(provider.getDescription());
             tieProveedor.setText(provider.getProveedor());
             tieRuc.setText(provider.getRuc());
         }

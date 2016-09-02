@@ -2,77 +2,79 @@ package py.com.cuatroqstudios.persistenceapp.models;
 
 import java.io.Serializable;
 
+import py.com.cuatroqstudios.persistenceapp.conn.JsonResponse;
+
 /**
  * Created by manuel on 7/8/16.
  */
-public class Product implements Serializable{
-    private Integer idProducto;
-    private String nombre;
-    private String precio;
-    private String codigo;
-    private Integer idProveedor;
+public class Product  implements Serializable{
+    private Integer idProduct;
+    private String name;
+    private String price;
+    private String code;
+    private Integer idProvider;
 
     public Product() {
     }
 
-    public Product(Integer idProducto, String nombre,
-                   String precio, String codigo, Integer idProveedor) {
-        this.idProducto = idProducto;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.codigo = codigo;
-        this.idProveedor = idProveedor;
+    public Product(Integer idProduct, String name,
+                   String price, String code, Integer idProvider) {
+        this.idProduct = idProduct;
+        this.name = name;
+        this.price = price;
+        this.code = code;
+        this.idProvider = idProvider;
     }
 
 
-    public Integer getIdProducto() {
-        return idProducto;
+    public Integer getIdProduct() {
+        return idProduct;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.idProducto = idProducto;
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrecio() {
-        return precio;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public Integer getIdProveedor() {
-        return idProveedor;
+    public Integer getIdProvider() {
+        return idProvider;
     }
 
-    public void setIdProveedor(Integer idProveedor) {
-        this.idProveedor = idProveedor;
+    public void setIdProvider(Integer idProvider) {
+        this.idProvider = idProvider;
     }
 
     @Override
     public String toString() {
         return "Producto{" +
-                ", idProducto='" + idProducto + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", precio='" + precio + '\'' +
-                ", codigo='" + codigo + '\'' +
-                ", idProveedor='" + idProveedor + '\'' +
+                ", idProduct='" + idProduct + '\'' +
+                ", name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                ", code='" + code + '\'' +
+                ", idProvider='" + idProvider + '\'' +
                 '}';
     }
 }

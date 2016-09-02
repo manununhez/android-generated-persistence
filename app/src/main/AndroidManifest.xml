@@ -2,9 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="py.com.cuatroqstudios.persistenceapp">
 
-    <!-- External storage for caching. -->
+    <!-- External storage for files. -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- <CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Para retrofit -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,20 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- &lt;!&ndash; PROVIDER &ndash;&gt; -->
-        <!-- <provider -->
-        <!-- android:name=".db.contentprovider.MyContentProvider" -->
-        <!-- android:authorities="py.com.cuatroqstudios.persistenceapp.contentprovider" /> -->
-        <!--  -->
         <activity android:name=".activities.ShoppingCartActivity" />
         <activity android:name=".activities.UserActivity" />
         <activity android:name=".activities.ProviderActivity" />
         <activity android:name=".activities.ProductActivity" />
         <activity android:name=".activities.ImageProductActivity" />
-        <activity android:name=".activities.ProviderFormActivity"/>
-        <activity android:name=".activities.ProductFormActivity"/>
-        <activity android:name=".activities.UserFormActivity"/>
+        <activity android:name=".activities.ProviderFormActivity" />
+        <activity android:name=".activities.ProductFormActivity" />
+        <activity android:name=".activities.UserFormActivity" />
+        <activity android:name=".activities.SensorActivity" />
+        <activity android:name=".activities.MakePhotoActivity" />
+        <activity android:name=".activities.RestActivity"></activity>
     </application>
 
 </manifest>

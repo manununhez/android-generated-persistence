@@ -35,7 +35,29 @@ public class MainActivity extends AppCompatActivity {
         Button btnProduct = (Button) findViewById(R.id.btnProduct);
         Button btnProvider = (Button) findViewById(R.id.btnProvider);
         Button btnImageProduct = (Button) findViewById(R.id.btnImageProduct);
+        Button btnDataProviders = (Button) findViewById(R.id.btnDataProviders);
+        Button btnPhoto = (Button) findViewById(R.id.btnPhoto);
+        Button btnRest = (Button) findViewById(R.id.btnRest);
 
+        btnRest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,RestActivity.class));
+            }
+        });
+        btnPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MakePhotoActivity.class));
+            }
+        });
+
+        btnDataProviders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SensorActivity.class));
+            }
+        });
 
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override

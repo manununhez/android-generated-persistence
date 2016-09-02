@@ -19,7 +19,7 @@
             android:id="@+id/tieIdProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="idProducto" />
+            android:hint="idProduct" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -71,7 +71,7 @@
             android:id="@+id/tieIdProveedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="idProveedor" />
+            android:hint="idProvider" />
     </android.support.design.widget.TextInputLayout>
     <Button
         android:id="@+id/btnSave"

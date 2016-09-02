@@ -27,8 +27,8 @@ public class ProviderDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ProviderTable.COLUMN_DESCRIPCION_LOCAL, provider.getDescripcion_local());
-        values.put(ProviderTable.COLUMN_PROVEEDOR_ID, provider.getIdProveedor());
+        values.put(ProviderTable.COLUMN_DESCRIPCION_LOCAL, provider.getDescription());
+        values.put(ProviderTable.COLUMN_PROVEEDOR_ID, provider.getIdProvider());
         values.put(ProviderTable.COLUMN_PROVEEDOR_NAME, provider.getProveedor());
         values.put(ProviderTable.COLUMN_RUC, provider.getRuc());
 
@@ -109,14 +109,14 @@ public class ProviderDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ProviderTable.COLUMN_DESCRIPCION_LOCAL, provider.getDescripcion_local());
-        values.put(ProviderTable.COLUMN_PROVEEDOR_ID, provider.getIdProveedor());
+        values.put(ProviderTable.COLUMN_DESCRIPCION_LOCAL, provider.getDescription());
+        values.put(ProviderTable.COLUMN_PROVEEDOR_ID, provider.getIdProvider());
         values.put(ProviderTable.COLUMN_PROVEEDOR_NAME, provider.getProveedor());
         values.put(ProviderTable.COLUMN_RUC, provider.getRuc());
 
         // updating row
         return db.update(ProviderTable.TABLET_NAME, values, ProviderTable.COLUMN_PROVEEDOR_ID + " = ?",
-                new String[] { String.valueOf(provider.getIdProveedor()) });
+                new String[] { String.valueOf(provider.getIdProvider()) });
 
     }
 
@@ -125,7 +125,7 @@ public class ProviderDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         db.delete(ProviderTable.TABLET_NAME, ProviderTable.COLUMN_PROVEEDOR_ID + " = ?",
-                new String[] { String.valueOf(provider.getIdProveedor()) });
+                new String[] { String.valueOf(provider.getIdProvider()) });
         db.close();
     }
 

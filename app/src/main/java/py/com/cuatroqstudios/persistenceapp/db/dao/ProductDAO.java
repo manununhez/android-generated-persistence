@@ -27,11 +27,11 @@ public class ProductDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ProductTable.COLUMN_CODIGO, product.getCodigo());
-        values.put(ProductTable.COLUMN_PROVEEDOR_ID, product.getIdProveedor());
-        values.put(ProductTable.COLUMN_NOMBRE, product.getNombre());
-        values.put(ProductTable.COLUMN_PRECIO, product.getPrecio());
-        values.put(ProductTable.COLUMN_PRODUCTO_ID, product.getIdProducto());
+        values.put(ProductTable.COLUMN_CODIGO, product.getCode());
+        values.put(ProductTable.COLUMN_PROVEEDOR_ID, product.getIdProvider());
+        values.put(ProductTable.COLUMN_NOMBRE, product.getName());
+        values.put(ProductTable.COLUMN_PRECIO, product.getPrice());
+        values.put(ProductTable.COLUMN_PRODUCTO_ID, product.getIdProduct());
 
 
         // Inserting Row
@@ -113,15 +113,15 @@ public class ProductDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(ProductTable.COLUMN_CODIGO, product.getCodigo());
-        values.put(ProductTable.COLUMN_PROVEEDOR_ID, product.getIdProveedor());
-        values.put(ProductTable.COLUMN_NOMBRE, product.getNombre());
-        values.put(ProductTable.COLUMN_PRECIO, product.getPrecio());
-        values.put(ProductTable.COLUMN_PRODUCTO_ID, product.getIdProducto());
+        values.put(ProductTable.COLUMN_CODIGO, product.getCode());
+        values.put(ProductTable.COLUMN_PROVEEDOR_ID, product.getIdProvider());
+        values.put(ProductTable.COLUMN_NOMBRE, product.getName());
+        values.put(ProductTable.COLUMN_PRECIO, product.getPrice());
+        values.put(ProductTable.COLUMN_PRODUCTO_ID, product.getIdProduct());
 
         // updating row
         return db.update(ProductTable.TABLET_NAME, values, ProductTable.COLUMN_PRODUCTO_ID + " = ?",
-                new String[] { String.valueOf(product.getIdProducto()) });
+                new String[] { String.valueOf(product.getIdProduct()) });
 
     }
 
@@ -130,7 +130,7 @@ public class ProductDAO {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
         db.delete(ProductTable.TABLET_NAME, ProductTable.COLUMN_PRODUCTO_ID + " = ?",
-                new String[] { String.valueOf(product.getIdProducto()) });
+                new String[] { String.valueOf(product.getIdProduct()) });
         db.close();
     }
 }
