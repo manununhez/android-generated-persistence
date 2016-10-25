@@ -10,14 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.math.BigDecimal;
+
 import py.com.cuatroqstudios.persistenceapp.R;
-import py.com.cuatroqstudios.persistenceapp.db.dao.ProviderDAO;
-import py.com.cuatroqstudios.persistenceapp.db.helper.MySQLiteHelper;
-import py.com.cuatroqstudios.persistenceapp.models.Provider;
 import py.com.cuatroqstudios.persistenceapp.sharedmanager.helper.MySharedPreferencesHelper;
 
 public class UserFormActivity extends AppCompatActivity {
-    private Boolean booleanEditMode = false;
     private TextInputEditText tiePassword;
     private TextInputEditText tieNombre;
 
@@ -37,22 +35,10 @@ public class UserFormActivity extends AppCompatActivity {
 
         Button btnSave = (Button) findViewById(R.id.btnSave);
 
-
-        btnSave.setText("Save Changes");
-        String nombre = MySharedPreferencesHelper.getValue(this, "nombre");
-        String password = MySharedPreferencesHelper.getValue(this, "password");
-
-        tieNombre.setText(nombre == null ? "" : nombre);
-        tiePassword.setText(password == null ? "" : password);
-
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = tieNombre.getText().toString();
-                String password = tiePassword.getText().toString();
-
-                MySharedPreferencesHelper.save(UserFormActivity.this, "nombre", nombre);
-                MySharedPreferencesHelper.save(UserFormActivity.this, "password", password);
+                saveData();
 
                 Intent returnIntent = new Intent();
                 setResult(Activity.RESULT_OK, returnIntent);
@@ -60,6 +46,25 @@ public class UserFormActivity extends AppCompatActivity {
             }
         });
 
+        loadData();
+
+    }
+
+    private void loadData(){
+        String nombre = MySharedPreferencesHelper.getValue(this, "nombre");
+        String password = MySharedPreferencesHelper.getValue(this, "password");
+
+
+        tieNombre.setText(nombre == null ? "" : nombre);
+        tiePassword.setText(password == null ? "" : password);
+    }
+
+    private void saveData(){
+        String nombre = tieNombre.getText().toString();
+        String password = tiePassword.getText().toString();
+
+        MySharedPreferencesHelper.save(UserFormActivity.this, "nombre", nombre);
+        MySharedPreferencesHelper.save(UserFormActivity.this, "password", password);
     }
 
     @Override

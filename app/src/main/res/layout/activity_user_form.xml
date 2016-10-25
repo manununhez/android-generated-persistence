@@ -43,5 +43,5 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tilPassword"
-        android:text="Add"/>
+        android:text="Save Changes"/>
 </RelativeLayout>

@@ -17,14 +17,12 @@ import py.com.cuatroqstudios.persistenceapp.R;
 import py.com.cuatroqstudios.persistenceapp.adapters.UserAdapter;
 import py.com.cuatroqstudios.persistenceapp.models.User;
 import py.com.cuatroqstudios.persistenceapp.sharedmanager.helper.MySharedPreferencesHelper;
-import py.com.cuatroqstudios.persistenceapp.utils.DividerItemDecoration;
-import py.com.cuatroqstudios.persistenceapp.utils.Tools;
 
 public class UserActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private UserAdapter mAdapter;
     private List<User> userList = new ArrayList<>();
-    private int REQUEST_CODE = 1;
+    private static int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +37,21 @@ public class UserActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new UserAdapter(this, userList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        recyclerView.setAdapter(mAdapter);
+      setupRecyclerView();
 
         loadUserData();
     }
 
-    private void loadUserData(){
+    private void setupRecyclerView() {
+        mAdapter = new UserAdapter(this, userList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        recyclerView.setAdapter(mAdapter);
+    }
+
+    private void loadUserData() {
         Toast.makeText(UserActivity.this, "Retrieving data from sharedPreferences", Toast.LENGTH_SHORT).show();
 
         String nombre = MySharedPreferencesHelper.getValue(this, "nombre");
@@ -78,12 +79,8 @@ public class UserActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE) {
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
-                // The user picked a contact.
-                // The Intent's data Uri identifies which contact was selected.
-                Tools.Logger.d("OnActivityResult");
                 userList.clear();
                 loadUserData();
-                // Do something with the contact here (bigger example below)
             }
         }
     }

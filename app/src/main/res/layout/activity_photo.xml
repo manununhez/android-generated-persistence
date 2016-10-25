@@ -11,4 +11,10 @@
         android:onClick="onClick"
         android:text="Make Photo" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photo saved in:"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/captureFront"/>
 </RelativeLayout>

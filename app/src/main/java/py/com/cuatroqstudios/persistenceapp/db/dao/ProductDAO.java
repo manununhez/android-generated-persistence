@@ -129,8 +129,7 @@ public class ProductDAO {
     public void deleteProduct(Product product) {
         SQLiteDatabase db = mySQLiteHelper.getWritableDatabase();
 
-        db.delete(ProductTable.TABLET_NAME, ProductTable.COLUMN_PRODUCTO_ID + " = ?",
-                new String[] { String.valueOf(product.getIdProduct()) });
+        db.delete(ProductTable.TABLET_NAME, null, null);
         db.close();
     }
 }

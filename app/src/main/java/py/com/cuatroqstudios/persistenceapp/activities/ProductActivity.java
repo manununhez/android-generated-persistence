@@ -22,7 +22,6 @@ import py.com.cuatroqstudios.persistenceapp.db.dao.ProductDAO;
 import py.com.cuatroqstudios.persistenceapp.db.helper.MySQLiteHelper;
 import py.com.cuatroqstudios.persistenceapp.models.Product;
 import py.com.cuatroqstudios.persistenceapp.utils.DividerItemDecoration;
-import py.com.cuatroqstudios.persistenceapp.utils.Tools;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -74,7 +73,6 @@ public class ProductActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // The user picked a contact.
                 // The Intent's data Uri identifies which contact was selected.
-                Tools.Logger.d("OnActivityResult");
                 productList.clear();
                 productList.addAll(productDAO.getAllProducts());
                 mAdapter.notifyDataSetChanged();
@@ -93,8 +91,8 @@ public class ProductActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         recyclerView.setAdapter(mAdapter);
     }

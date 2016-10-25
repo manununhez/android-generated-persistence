@@ -17,7 +17,7 @@
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/ivDelete"
-        android:src="@drawable/ic_mode_edit" />
+        android:src="@android:drawable/ic_menu_edit" />
 
     <ImageView
         android:id="@+id/ivDelete"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_delete_sweep" />
+        android:src="@android:drawable/ic_menu_delete" />
 
     <LinearLayout
         android:id="@+id/llidproveedor"

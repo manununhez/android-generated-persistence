@@ -62,8 +62,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, UserFormActivity.class);
-                intent.putExtra("typeOperation", "edit");
-                intent.putExtra("user", user);
                 ((UserActivity) context).startActivityForResult(intent, REQUEST_CODE);
             }
         });

@@ -6,11 +6,17 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- <CAMERA -->
-    <uses-permission android:name="android.permission.CAMERA" />
-
     <!-- Para retrofit -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- GPS -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- AUDIO -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -22,9 +28,20 @@
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
         </activity>
         <activity android:name=".activities.ShoppingCartActivity" />
         <activity android:name=".activities.UserActivity" />
@@ -36,7 +53,8 @@
         <activity android:name=".activities.UserFormActivity" />
         <activity android:name=".activities.SensorActivity" />
         <activity android:name=".activities.MakePhotoActivity" />
-        <activity android:name=".activities.RestActivity"></activity>
+        <activity android:name=".activities.RestActivity" />
+        <activity android:name=".activities.AudioRecordActivity" />
     </application>
 
 </manifest>

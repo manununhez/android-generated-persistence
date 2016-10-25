@@ -4,7 +4,6 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +13,13 @@ import py.com.cuatroqstudios.persistenceapp.R;
 import py.com.cuatroqstudios.persistenceapp.filesmanager.helper.MyFilesHelper;
 
 public class ImageProductActivity extends AppCompatActivity {
+    private TextInputEditText tieIdProductoImagen;
+    private TextInputEditText tieImagen;
+    private TextInputEditText tieIdProducto;
+    private TextInputEditText tieImg_src;
+
+    private static String FILENAME = "prueba.txt";
+    private static String FILE_ENCODING = "UTF-8";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,38 +32,37 @@ public class ImageProductActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        final TextInputEditText tieIdProductoImagen = (TextInputEditText) findViewById(R.id.tieIdProductoImagen);
-        final TextInputEditText tieImagen = (TextInputEditText) findViewById(R.id.tieImagen);
-        final TextInputEditText tieIdProducto = (TextInputEditText) findViewById(R.id.tieIdProducto);
-        final TextInputEditText tieImg_src = (TextInputEditText) findViewById(R.id.tieImg_src);
+        tieIdProductoImagen = (TextInputEditText) findViewById(R.id.tieIdProductoImagen);
+        tieImagen = (TextInputEditText) findViewById(R.id.tieImagen);
+        tieIdProducto = (TextInputEditText) findViewById(R.id.tieIdProducto);
+        tieImg_src = (TextInputEditText) findViewById(R.id.tieImg_src);
 
         Button btnWriteToFile = (Button) findViewById(R.id.btnWriteToFile);
         Button btnReadFromFile = (Button) findViewById(R.id.btnReadFromFile);
 
         final EditText etContent = (EditText) findViewById(R.id.etContent);
 
-        final String content = tieIdProductoImagen.getText() + "," + tieImagen.getText() + "," + tieIdProducto.getText() + ","
-                + tieImg_src.getText();
-
 
         btnReadFromFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                etContent.setText(MyFilesHelper.readFile(getFilesDir().getPath() +"prueba.txt", "UTF-8"));
+                etContent.setText(MyFilesHelper.readFile(getFilesDir().getPath() + FILENAME, FILE_ENCODING));
             }
         });
 
         btnWriteToFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Test - Write", tieIdProductoImagen.getText() + "," + tieImagen.getText() + "," + tieIdProducto.getText() + ","
-                        + tieImg_src.getText());
-                MyFilesHelper.writeFile(getFilesDir().getPath() +"prueba.txt", tieIdProductoImagen.getText() + "," + tieImagen.getText() + "," + tieIdProducto.getText() + ","
-                        + tieImg_src.getText());
+                MyFilesHelper.writeFile(getFilesDir().getPath() + FILENAME, getContent());
             }
         });
 
 
+    }
+
+    private String getContent() {
+        return tieIdProductoImagen.getText() + "," + tieImagen.getText() + "," + tieIdProducto.getText() + ","
+                + tieImg_src.getText();
     }
 
 
