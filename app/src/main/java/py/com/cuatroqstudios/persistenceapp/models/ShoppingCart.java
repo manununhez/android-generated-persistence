@@ -14,6 +14,9 @@ public class ShoppingCart {
     private String cantidad_producto;
     private String sync_time;
 
+    public ShoppingCart() {
+    }
+
     public ShoppingCart(String idProducto, String descripcion,
                         String idProveedor, String marca, String porcentaje_impuesto,
                         String precio, String unidad_minima_venta, String cantidad_producto, String sync_time) {

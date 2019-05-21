@@ -1,38 +1,42 @@
 package py.com.cuatroqstudios.persistenceapp.models;
 
+import java.io.Serializable;
+
+import py.com.cuatroqstudios.persistenceapp.conn.JsonResponse;
+
 /**
  * Created by manuel on 7/8/16.
  */
-public class Provider {
-    private Integer idProveedor;
-    private String descripcion_local;
+public class Provider extends JsonResponse implements Serializable {
+    private Integer idProvider;
+    private String description;
     private String proveedor;
     private String ruc;
 
     public Provider() {
     }
 
-    public Provider(Integer idProveedor, String proveedor, String descripcion_local, String ruc ) {
+    public Provider(Integer idProvider, String proveedor, String description, String ruc) {
         this.ruc = ruc;
-        this.descripcion_local = descripcion_local;
+        this.description = description;
         this.proveedor = proveedor;
-        this.idProveedor = idProveedor;
+        this.idProvider = idProvider;
     }
 
-    public Integer getIdProveedor() {
-        return idProveedor;
+    public Integer getIdProvider() {
+        return idProvider;
     }
 
-    public void setIdProveedor(int idProveedor) {
-        this.idProveedor = idProveedor;
+    public void setIdProvider(int idProvider) {
+        this.idProvider = idProvider;
     }
 
-    public String getDescripcion_local() {
-        return descripcion_local;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion_local(String descripcion_local) {
-        this.descripcion_local = descripcion_local;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProveedor() {
@@ -54,8 +58,8 @@ public class Provider {
     @Override
     public String toString() {
         return "Proveedor{" +
-                "idProveedor='" + idProveedor + '\'' +
-                ", descripcion_local='" + descripcion_local + '\'' +
+                "idProvider='" + idProvider + '\'' +
+                ", description='" + description + '\'' +
                 ", proveedor='" + proveedor + '\'' +
                 ", ruc='" + ruc + '\'' +
                 '}';
